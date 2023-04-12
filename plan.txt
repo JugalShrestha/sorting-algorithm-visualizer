@@ -1,0 +1,26 @@
+Making Sorting Algo Visualizer
+
+-Selection sorting
+-Bubble sorting
+-Merge sorting
+-Insertion sorting
+-Quick sorting
+
+-Structure: 
+    -NavOptions: Sorting algorithms
+                -Bubble, Selection, Merge, Quick, Insertion
+                :Array generator
+                    -rand(int i<50) size<15;
+                :Sorting speed;
+    -Index: Array Unsorted: red;
+            Array Sorting : yellow;
+            Array Sorted : green;
+    -Array drawing :
+        [23,34,123,4,3,42,32,43,456,68,989,etc.]
+    -Numbers visualization;
+
+Formula: 
+    -New Array Generation:
+        Will be size = input Users
+        4<size<15
+        

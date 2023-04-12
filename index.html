@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="keywords" content="Sorting Algo Visualizer">
+    <meta name="description" content="This is a visualization of sorting algorithms/">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>Sorting Algo Visualizer</title>
+
+</head>
+<body>
+    <!--Start of everything-->
+    <section class="everything">
+        <nav class="nav-bar">
+            <!--Array Generator: Generates random size array-->
+            <div class="array-generator">
+                New Array
+            </div>
+            <!--Array size and speed determiner-->
+            <div class="array-sorting-controller">
+                <!--Min = 0.5x; Max = 2x-->
+                <select name="array-speed-controller" class="array-speed-controller">
+                    <option value="">speed</option>
+                    <option value="1.5">slow</option>
+                    <option value="1">normal</option>
+                    <option value="0.5">fast</option>
+                </select>
+                <!--Min = 4; Max = 15-->
+                <input type="number" min="4" max="15" placeholder="size" class="array-size-controller">
+            </div>
+            <!--All the possible sorting algorithms-->
+            <div class="sorting-algo-options">
+                <div class="sorting-algo">Bubble</div>
+                <div class="sorting-algo">Selection</div>
+                <div class="sorting-algo">Insertion</div>
+                <div class="sorting-algo">Quick</div>
+                <div class="sorting-algo">Merge</div>
+            </div>
+            <!--Sort Starter-->
+            <div class="sorter">
+                Sort
+            </div>
+        </nav>
+
+        <!--Start of Visualizer-->
+        <section class="visualizer">
+        </section>
+        <!--End of Visualizer-->
+
+        <!--Start of blocker-->
+        <div class="blocker"></div>
+    </section>
+    <!--End of everything-->
+
+    <script src="script.js"></script>
+</body>
+</html>

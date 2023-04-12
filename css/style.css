@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--p-color);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --p-color: #0d0d0d;
+  --s-color: #f2f2f2;
+  --n-color: red;
+  --text-size: 1.7vh;
+  --header-size: 2.5vh;
+}
+
+body {
+  width: 100%;
+  height: 100dvh;
+  background: var(--s-color);
+}
+body .everything {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+body .everything .nav-bar {
+  width: 100%;
+  z-index: 0;
+  padding: 2vh;
+  flex-wrap: wrap;
+  border-bottom: 0.3vh solid var(--p-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .everything .nav-bar .array-generator {
+  padding: 1vh;
+  cursor: pointer;
+  background: var(--p-color);
+  color: var(--s-color);
+  text-transform: uppercase;
+  font-size: var(--text-size);
+}
+body .everything .nav-bar .array-sorting-controller {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vh;
+}
+body .everything .nav-bar .array-sorting-controller .array-size-controller, body .everything .nav-bar .array-sorting-controller .array-speed-controller {
+  padding: 1vh;
+  font-size: var(--text-size);
+  background: var(--s-color);
+  border: 0.3vh solid var(--p-color);
+  outline: none;
+}
+body .everything .nav-bar .sorting-algo-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vh;
+}
+body .everything .nav-bar .sorting-algo-options .sorting-algo {
+  cursor: pointer;
+  padding: 1vh;
+  font-size: var(--text-size);
+  background: var(--p-color);
+  color: var(--s-color);
+}
+body .everything .nav-bar .sorter {
+  cursor: pointer;
+  font-size: var(--text-size);
+  padding: 1vh;
+  font-weight: 900;
+  color: var(--s-color);
+  text-transform: uppercase;
+  background: var(--n-color);
+}
+body .everything .visualizer {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1vh;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--header-size);
+}
+body .everything .visualizer .number {
+  padding: 1vh;
+  font-size: var(--text-size);
+  border: 0.3vh solid var(--p-color);
+  font-weight: 900;
+}
+body .everything .visualizer .unsorted {
+  background: var(--s-color);
+  color: var(--p-color);
+}
+body .everything .visualizer .sorting-1 {
+  background: yellow;
+  color: var(--p-color);
+}
+body .everything .visualizer .sorting-2 {
+  background: cyan;
+  color: var(--p-color);
+}
+body .everything .visualizer .sorted {
+  background: green;
+  color: var(--s-color);
+}
+body .everything .blocker {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  pointer-events: all;
+  width: 100%;
+  height: 100dvh;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 980px) {
+  .nav-bar {
+    flex-direction: column !important;
+    gap: 2vh !important;
+  }
+  .nav-bar div {
+    width: 100% !important;
+  }
+  .nav-bar .sorting-algo-options {
+    flex-direction: column !important;
+  }
+}/*# sourceMappingURL=style.css.map */
