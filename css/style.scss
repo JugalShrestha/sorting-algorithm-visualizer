@@ -84,11 +84,11 @@ body{
             height: 100%;
             z-index: 2;
             display: flex;
+            padding: 1vh;
             flex-wrap: wrap;
             gap: 1vh;
             align-items: center;
             justify-content: center;
-            font-size: var(--header-size);
             .number{
                 padding: 1vh;
                 font-size: var(--text-size);
