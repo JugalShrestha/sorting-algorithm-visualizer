@@ -54,10 +54,14 @@ let algo = 'bubble'
 sortingAlgorithms.forEach(algorithm=>{
     algorithm.addEventListener('click',()=>{
         sortingAlgorithms.forEach(algorithm=>{    
-            algorithm.style.background = "var(--p-color)"
+            algorithm.style.background = "var(--s-color)"
+            algorithm.style.boxShadow = 'none'
+            algorithm.style.fontWeight = '300'
         })
         algo = algorithm.innerText.toLowerCase()
-        algorithm.style.background = "var(--n-color)"
+        algorithm.style.background = "var(--n1-color)"
+        algorithm.style.fontWeight = '900'
+        algorithm.style.boxShadow = '.5vh .5vh var(--shadow)'
     })
 })
 
@@ -101,7 +105,7 @@ async function sort(option){
                 }
                 visualizer.children[size-i-1].classList.add('sorted')
             }
-            visualizer.firstChild.classList.add('sorted') 
+            visualizer.firstChild.classList.add('sorted')
             blocker.style.display = "none"
             break;
 
@@ -140,8 +144,31 @@ async function sort(option){
             console.log('quick sort');
             blocker.style.display = "none"
             break;
-        case 'insertion':
-            console.log('insertion sort');
+        case 'insertion': 
+            for (i = 1; i < size; i++)
+            { 
+                let key = array[i]; 
+                j = i - 1; 
+                visualizer.children[i].classList.add('sorting-1')
+                while (j >= 0 && array[j] > key)
+                {
+                    await sleep(speed) 
+                    array[j + 1] = array[j]; 
+                    visualizer.children[j+1].classList.add('sorting-2') 
+                    visualizer.children[j+1].innerText = array[j]
+                    j = j - 1;
+                    await sleep(speed-500)    
+                    visualizer.children[j+1].classList.remove('sorting-2') 
+                } 
+                visualizer.children[i].classList.remove('sorting-1')
+                array[j + 1] = key; 
+                visualizer.children[j+1].innerText = key
+                visualizer.children[j+1].classList.add('sorted') 
+            } 
+            for (i = 0; i < size; i++)
+            {
+                visualizer.children[i].classList.add('sorted')
+            }
             blocker.style.display = "none"
             break;
 

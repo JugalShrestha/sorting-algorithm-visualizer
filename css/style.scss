@@ -2,16 +2,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: var(--p-color);
-    font-family:Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+    font-family: var(--text);
+    font-size: var(--text-size);
+    font-weight: 300;
 }
 
 :root{
-    --p-color: #0d0d0d;
-    --s-color: #f2f2f2;
-    --n-color: red;
+    --p-color: #0D0D0D;
+    --s-color: #FFFAFA;
+    --n1-color:#FFD700;
+    --n2-color: #66CDAA;
+    --n3-color: #32CD32;
+
+    --text-color: black;
+    --shadow: black;
+
     --text-size: 1.7vh;
     --header-size: 2.5vh;
+
+    --text: 'Roboto', sans-serif;
 }
 
 body{
@@ -30,17 +40,17 @@ body{
             z-index: 0;
             padding: 2vh;
             flex-wrap: wrap;
-            border-bottom: .3vh solid var(--p-color);
             display: flex;
             align-items: center;
             justify-content: space-between;
             .array-generator{
                 padding: 1vh;
                 cursor: pointer;
-                background: var(--p-color);
-                color: var(--s-color);
+                background: var(--n1-color);
                 text-transform: uppercase;
+                font-weight: 900;
                 font-size: var(--text-size);
+                box-shadow: .5vh .5vh var(--shadow);
             }
             .array-sorting-controller{
                 display: flex;
@@ -50,9 +60,11 @@ body{
                 .array-size-controller,.array-speed-controller{
                     padding: 1vh;
                     font-size: var(--text-size);
-                    background: var(--s-color);
-                    border: .3vh solid var(--p-color);
+                    font-weight: 900;
+                    background: var(--n1-color);
+                    border: .3vh solid transparent;
                     outline: none;
+                    box-shadow: .5vh .5vh var(--shadow);
                 }
             }
             .sorting-algo-options{
@@ -64,18 +76,23 @@ body{
                     cursor: pointer;
                     padding: 1vh;
                     font-size: var(--text-size);
-                    background: var(--p-color);
-                    color: var(--s-color);
+                    background: var(--s-color);
+                    font-weight: 300;
+                    &:first-child{
+                        background: var(--n1-color);
+                        box-shadow: .5vh .5vh var(--shadow);
+                        font-weight: 900;
+                    }
                 }
             }
             .sorter{
                 cursor: pointer;
                 font-size: var(--text-size);
                 padding: 1vh;
-                font-weight: 900;
-                color: var(--s-color);
+                font-weight: 900 !important;
                 text-transform: uppercase;
-                background: var(--n-color);
+                background: var(--n1-color);
+                box-shadow: .5vh .5vh var(--shadow);
             }
         }
         //Start of Visualizer
@@ -100,15 +117,15 @@ body{
                 color: var(--p-color);
             }
             .sorting-1{
-                background: yellow;
+                background: var(--n1-color);
                 color: var(--p-color);
             }  
             .sorting-2{
-                background: cyan;
+                background: var(--n2-color);
                 color: var(--p-color);
             }
             .sorted{
-                background: green;
+                background: var(--n3-color);
                 color: var(--s-color);
             }
         }
@@ -128,14 +145,45 @@ body{
 }
 
 @media (max-width: 980px) {
+    .everything{
+        align-items: center !important;
+        justify-content: center !important;
+    }
     .nav-bar{
+        z-index: 0 !important;
+        position: fixed;
+        width: 100% !important;
+        height: 100% !important;
         flex-direction: column !important;
         gap: 2vh !important;
-        div{
-            width: 100% !important;
+        .array-generator{
+            position: absolute;
+            top: 2vh;
+            left: 1vh;
+        }
+        .array-sorting-controller{
+            position: absolute;
+            top: 2vh;
+            right: 1vh;
         }
         .sorting-algo-options{
-            flex-direction: column !important;
+            position: absolute;
+            top: 10vh;
+            left: 1vh;
         }
+        .sorter{
+            position: absolute;
+            width: 90% !important;
+            text-align: center !important;
+            bottom: 2vh;
+        }
+    }
+    .visualizer{
+        z-index: 2 !important;
+        height: max-content !important;
+        pointer-events: none !important;
+    }
+    .blocker{
+        z-index: 1 !important;
     }
 }
