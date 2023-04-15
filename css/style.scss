@@ -27,11 +27,50 @@
 body{
     width: 100%;
     height: 100dvh;
-    background: var(--s-color);
+    background: var(--n1-color);
+    .loader{
+        transition: .2s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        gap: 1vh;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100dvh;
+        background: var(--n1-color);
+        .hypnotic {
+            width: 6vh;
+            height: 6vh;
+            border-radius: 100%;
+            border: .3vh solid var(--p-color);
+            background: conic-gradient(from -90deg at calc(100% - .1vh) calc(100% - .1vh),#0000 0 90deg, var(--p-color) 0),
+                   conic-gradient(from -90deg at calc(100% - .1vh) calc(100% - .1vh),#0000 0 90deg, var(--p-color) 0);
+            background-size: 2vh 2vh;
+            background-position: 0 0;
+            animation: hypnotic-p6wowimd 5s infinite;
+            @keyframes hypnotic-p6wowimd {
+                0%{
+                    background-position: 0 0;
+                }
+                50% {
+                   background-position: -5vh -5vh,5vh 5vh;
+                }
+                100%{
+                    background-position: 0 0;
+                }
+             }
+         }
+         .text{
+            font-size: var(--text-size);
+         }
+    }
     .everything{
+        transition: .2s ease-in-out;
         width: 100%;
         height: 100%;
-        display: flex;
+        opacity: 0;
+        background: var(--s-color);
+        display: none;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;

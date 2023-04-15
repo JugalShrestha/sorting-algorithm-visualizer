@@ -9,6 +9,25 @@ const sorter = document.querySelector('.sorter')
 const visualizer = document.querySelector('.visualizer')
 
 const blocker = document.querySelector('.blocker')
+
+const loader = document.querySelector('.loader')
+const everything = document.querySelector('.everything')
+
+//--------------Loading screen--------------------
+
+window.addEventListener('load',()=>{
+    setTimeout(removeLoader,1000)
+})
+function removeLoader(){
+    loader.style.opacity = "0"
+    loader.style.display  = "none"
+    setTimeout(load,1000)
+}
+function load(){
+    everything.style.display = "flex"
+    everything.style.opacity = "1"
+}
+
 //-------------Array maker----------------------
 
 let array = {}
