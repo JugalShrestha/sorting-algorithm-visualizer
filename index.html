@@ -37,7 +37,6 @@
             <div class="array-sorting-controller">
                 <!--Min = 0.5x; Max = 2x-->
                 <select name="array-speed-controller" class="array-speed-controller">
-                    <option value="">speed</option>
                     <option value="1.5">slow</option>
                     <option value="1">normal</option>
                     <option value="0.5">fast</option>
@@ -47,9 +46,9 @@
             </div>
             <!--All the possible sorting algorithms-->
             <div class="sorting-algo-options">
-                <div class="sorting-algo">Bubble</div>
-                <div class="sorting-algo">Selection</div>
-                <div class="sorting-algo">Insertion</div>
+                <div class="sorting-algo">bubble</div>
+                <div class="sorting-algo">selection</div>
+                <div class="sorting-algo">insertion</div>
             </div>
             <!--Sort Starter-->
             <div class="sorter">
@@ -57,13 +56,51 @@
             </div>
         </nav>
 
+        <!-- start of swap display -->
+        <section class="swap-display">
+            <div class="header">
+                Swapping display:
+            </div>
+            <div class="text">
+                ...
+            </div>
+        </section>
+        <!-- end of swap display -->
+
         <!--Start of Visualizer-->
         <section class="visualizer">
         </section>
         <!--End of Visualizer-->
 
-        <!--Start of blocker-->
-        <div class="blocker"></div>
+        <!-- start of index -->
+        <section class="index">
+            <div class="index-option">
+                <div class="color" style="background: var(--n1-color);"></div>
+                <div class="text">
+                    Selected Node
+                </div>
+            </div>
+            <div class="index-option">
+                <div class="color" style=" background: var(--n2-color);"></div>
+                <div class="text">
+                    Sorting Node
+                </div>
+            </div>
+            <div class="index-option">
+                <div class="color" style="background: var(--n3-color);"></div>
+                <div class="text">
+                    Sorted Node
+                </div>
+            </div>
+        </section>
+        <!-- end of index -->
+
+        <!-- start of info about algo -->
+        <section class="info-about-algo">
+            
+        </section>
+        <!-- end of info about algo -->
+
     </section>
     <!--End of everything-->
 

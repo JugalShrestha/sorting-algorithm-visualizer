@@ -23,8 +23,8 @@
 
 body {
   width: 100%;
-  height: 100dvh;
-  background: var(--n1-color);
+  height: 100vh;
+  background: var(--s-color);
 }
 body .loader {
   transition: 0.2s ease-in-out;
@@ -34,8 +34,8 @@ body .loader {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100dvh;
-  background: var(--n1-color);
+  height: 100vh;
+  background: var(--s-color);
 }
 body .loader .hypnotic {
   width: 6vh;
@@ -69,14 +69,15 @@ body .everything {
   background: var(--s-color);
   display: none;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
+  gap: 2vh;
 }
 body .everything .nav-bar {
   width: 100%;
-  z-index: 0;
+  position: fixed;
   padding: 2vh;
-  flex-wrap: wrap;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -84,11 +85,13 @@ body .everything .nav-bar {
 body .everything .nav-bar .array-generator {
   padding: 1vh;
   cursor: pointer;
-  background: var(--n1-color);
+  background: var(--p-color);
+  color: var(--s-color);
   text-transform: uppercase;
+  border-radius: 0.5vh;
   font-weight: 900;
   font-size: var(--text-size);
-  box-shadow: 0.5vh 0.5vh var(--shadow);
+  box-shadow: 0.5vh 0.5vh var(--n1-color);
 }
 body .everything .nav-bar .array-sorting-controller {
   display: flex;
@@ -98,12 +101,18 @@ body .everything .nav-bar .array-sorting-controller {
 }
 body .everything .nav-bar .array-sorting-controller .array-size-controller, body .everything .nav-bar .array-sorting-controller .array-speed-controller {
   padding: 1vh;
-  font-size: var(--text-size);
+  cursor: pointer;
+  background: var(--p-color);
+  color: var(--s-color);
+  text-transform: uppercase;
+  border-radius: 0.5vh;
   font-weight: 900;
+  font-size: var(--text-size);
+  box-shadow: 0.5vh 0.5vh var(--n1-color);
+}
+body .everything .nav-bar .array-sorting-controller .array-speed-controller option {
   background: var(--n1-color);
-  border: 0.3vh solid transparent;
-  outline: none;
-  box-shadow: 0.5vh 0.5vh var(--shadow);
+  padding: 1vh;
 }
 body .everything .nav-bar .sorting-algo-options {
   display: flex;
@@ -112,16 +121,20 @@ body .everything .nav-bar .sorting-algo-options {
   gap: 1vh;
 }
 body .everything .nav-bar .sorting-algo-options .sorting-algo {
-  cursor: pointer;
   padding: 1vh;
+  cursor: pointer;
+  background: var(--p-color);
+  color: var(--s-color);
+  text-transform: uppercase;
+  border-radius: 0.5vh;
+  font-weight: 900;
   font-size: var(--text-size);
-  background: var(--s-color);
-  font-weight: 300;
+  box-shadow: 0.5vh 0.5vh var(--n1-color);
 }
 body .everything .nav-bar .sorting-algo-options .sorting-algo:first-child {
   background: var(--n1-color);
+  color: var(--p-color);
   box-shadow: 0.5vh 0.5vh var(--shadow);
-  font-weight: 900;
 }
 body .everything .nav-bar .sorter {
   cursor: pointer;
@@ -129,12 +142,44 @@ body .everything .nav-bar .sorter {
   padding: 1vh;
   font-weight: 900 !important;
   text-transform: uppercase;
-  background: var(--n1-color);
-  box-shadow: 0.5vh 0.5vh var(--shadow);
+  border-radius: 0.5vh;
+  background: var(--p-color);
+  color: var(--s-color);
+  box-shadow: 0.5vh 0.5vh var(--n3-color);
+}
+body .everything .swap-display {
+  padding: 1vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2vh;
+  justify-content: center;
+  width: -moz-max-content !important;
+  width: max-content !important;
+}
+body .everything .swap-display .header {
+  color: var(--s-color);
+  border-radius: 0.5vh;
+  text-align: center;
+  width: 100%;
+  background: var(--p-color);
+  font-size: var(--header-size);
+  font-weight: 900;
+  padding: 1vh;
+  box-shadow: 0.5vh 0.5vh var(--n1-color);
+}
+body .everything .swap-display .text {
+  width: 100%;
+  text-align: center;
+  background: var(--p-color);
+  border-radius: 0.5vh;
+  color: var(--s-color);
+  padding: 1vh;
+  font-size: var(--header-size);
+  box-shadow: 0.5vh 0.5vh var(--n2-color);
 }
 body .everything .visualizer {
   width: 100%;
-  height: 100%;
   z-index: 2;
   display: flex;
   padding: 1vh;
@@ -148,6 +193,7 @@ body .everything .visualizer .number {
   font-size: var(--text-size);
   border: 0.3vh solid var(--p-color);
   font-weight: 900;
+  border-radius: 0.5vh;
 }
 body .everything .visualizer .unsorted {
   background: var(--s-color);
@@ -165,14 +211,39 @@ body .everything .visualizer .sorted {
   background: var(--n3-color);
   color: var(--s-color);
 }
-body .everything .blocker {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  pointer-events: all;
+body .everything .index {
+  padding: 1vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vh;
   width: 100%;
-  height: 100dvh;
-  background: rgba(0, 0, 0, 0.5);
+}
+body .everything .index .index-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1vh;
+}
+body .everything .index .color {
+  width: var(--text-size);
+  height: var(--text-size);
+}
+body .everything .info-about-algo {
+  border: 0.3vh solid var(--shadow);
+  border-radius: 0.5vh;
+  max-width: 50%;
+  padding: 3vh;
+  box-shadow: 0.5vh 0.5vh var(--n3-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1vh;
+}
+body .everything .info-about-algo li {
+  text-transform: lowercase;
+  list-style-type: upper-roman;
 }
 
 @media (max-width: 980px) {
@@ -200,7 +271,8 @@ body .everything .blocker {
   }
   .nav-bar .sorting-algo-options {
     position: absolute;
-    top: 10vh;
+    gap: 2vh !important;
+    top: 8vh;
     left: 1vh;
   }
   .nav-bar .sorter {
@@ -208,6 +280,15 @@ body .everything .blocker {
     width: 90% !important;
     text-align: center !important;
     bottom: 2vh;
+  }
+  .swap-display {
+    min-width: 90% !important;
+  }
+  .index {
+    max-width: 90% !important;
+  }
+  .info-about-algo {
+    min-width: 90% !important;
   }
   .visualizer {
     z-index: 2 !important;

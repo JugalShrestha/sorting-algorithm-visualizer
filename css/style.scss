@@ -26,8 +26,8 @@
 
 body{
     width: 100%;
-    height: 100dvh;
-    background: var(--n1-color);
+    height: 100vh;
+    background: var(--s-color);
     .loader{
         transition: .2s ease-in-out;
         display: flex;
@@ -36,8 +36,8 @@ body{
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: 100dvh;
-        background: var(--n1-color);
+        height: 100vh;
+        background: var(--s-color);
         .hypnotic {
             width: 6vh;
             height: 6vh;
@@ -72,38 +72,49 @@ body{
         background: var(--s-color);
         display: none;
         flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
+        align-items: center;
+        justify-content: center;
+        gap: 2vh;
         .nav-bar{
             width: 100%;
-            z-index: 0;
+            position: fixed;
             padding: 2vh;
-            flex-wrap: wrap;
+            top: 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
             .array-generator{
                 padding: 1vh;
                 cursor: pointer;
-                background: var(--n1-color);
+                background: var(--p-color);
+                color: var(--s-color);
                 text-transform: uppercase;
+                border-radius: .5vh;
                 font-weight: 900;
                 font-size: var(--text-size);
-                box-shadow: .5vh .5vh var(--shadow);
+                box-shadow: .5vh .5vh var(--n1-color);
             }
             .array-sorting-controller{
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 gap: 1vh;   
-                .array-size-controller,.array-speed-controller{
+                .array-size-controller,.array-speed-controller{    
                     padding: 1vh;
-                    font-size: var(--text-size);
+                    cursor: pointer;
+                    background: var(--p-color);
+                    color: var(--s-color);
+                    text-transform: uppercase;
+                    border-radius: .5vh;
                     font-weight: 900;
-                    background: var(--n1-color);
-                    border: .3vh solid transparent;
-                    outline: none;
-                    box-shadow: .5vh .5vh var(--shadow);
+                    font-size: var(--text-size);
+                    box-shadow: .5vh .5vh var(--n1-color);
+                }
+                .array-speed-controller{
+                    option{
+                        background: var(--n1-color);
+                        padding: 1vh;
+                    }
                 }
             }
             .sorting-algo-options{
@@ -112,15 +123,19 @@ body{
                 justify-content: center;
                 gap: 1vh;
                 .sorting-algo{
-                    cursor: pointer;
                     padding: 1vh;
+                    cursor: pointer;
+                    background: var(--p-color);
+                    color: var(--s-color);
+                    text-transform: uppercase;
+                    border-radius: .5vh;
+                    font-weight: 900;
                     font-size: var(--text-size);
-                    background: var(--s-color);
-                    font-weight: 300;
+                    box-shadow: .5vh .5vh var(--n1-color);
                     &:first-child{
                         background: var(--n1-color);
+                        color: var(--p-color);
                         box-shadow: .5vh .5vh var(--shadow);
-                        font-weight: 900;
                     }
                 }
             }
@@ -130,14 +145,49 @@ body{
                 padding: 1vh;
                 font-weight: 900 !important;
                 text-transform: uppercase;
-                background: var(--n1-color);
-                box-shadow: .5vh .5vh var(--shadow);
+                border-radius: .5vh;
+                background: var(--p-color);
+                color: var(--s-color);
+                box-shadow: .5vh .5vh var(--n3-color);
             }
         }
+
+        //Start of swap display
+        .swap-display{
+            padding: 1vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2vh;
+            justify-content: center;
+            width: max-content !important;
+            .header{
+                color: var(--s-color);
+                border-radius: .5vh;
+                text-align: center;
+                width: 100%;
+                background: var(--p-color);
+                font-size: var(--header-size);
+                font-weight: 900;
+                padding: 1vh;
+                box-shadow: .5vh .5vh var(--n1-color);
+            }
+            .text{
+                width: 100%;
+                text-align: center;
+                background: var(--p-color);
+                border-radius: .5vh;
+                color: var(--s-color);
+                padding: 1vh;
+                font-size: var(--header-size);
+                box-shadow: .5vh .5vh var(--n2-color);
+            }
+        }
+        //End of swap display
+
         //Start of Visualizer
         .visualizer{
             width: 100%;
-            height: 100%;
             z-index: 2;
             display: flex;
             padding: 1vh;
@@ -150,6 +200,7 @@ body{
                 font-size: var(--text-size);
                 border: .3vh solid var(--p-color);
                 font-weight: 900;
+                border-radius: .5vh;
             }
             .unsorted{
                 background: var(--s-color);
@@ -169,17 +220,46 @@ body{
             }
         }
         //End of Visualizer
-        //Start of blocker
-        .blocker{
-            display: none;
-            position: fixed;
-            z-index: 1;
-            pointer-events: all;
+
+        //Start of Index
+        .index{
+            padding: 1vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2vh;
             width: 100%;
-            height: 100dvh;
-            background: rgba(0,0,0,0.5);
+            .index-option{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 1vh;
+            }
+            .color{
+                width: var(--text-size);
+                height: var(--text-size);
+            }
         }
-        //End of blocker
+        //End of Index
+
+        // Start of info about algo
+        .info-about-algo{
+            border: .3vh solid var(--shadow);
+            border-radius: .5vh;
+            max-width: 50%;
+            padding: 3vh;
+            box-shadow: .5vh .5vh var(--n3-color);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 1vh;
+            li{
+                text-transform: lowercase;
+                list-style-type: upper-roman;
+            }
+        }
+        // End of info about algo
     }
 }
 
@@ -207,7 +287,8 @@ body{
         }
         .sorting-algo-options{
             position: absolute;
-            top: 10vh;
+            gap: 2vh !important;
+            top: 8vh;
             left: 1vh;
         }
         .sorter{
@@ -216,6 +297,15 @@ body{
             text-align: center !important;
             bottom: 2vh;
         }
+    }
+    .swap-display{
+        min-width: 90% !important;
+    }
+    .index{
+        max-width: 90% !important;
+    }
+    .info-about-algo{
+        min-width: 90% !important;
     }
     .visualizer{
         z-index: 2 !important;
