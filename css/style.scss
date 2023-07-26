@@ -254,6 +254,11 @@ body{
             align-items: flex-start;
             justify-content: flex-start;
             gap: 1vh;
+            h1{
+                font-size: var(--header-size);
+                text-transform: uppercase;
+                font-weight: 900;
+            }
             li{
                 text-transform: lowercase;
                 list-style-type: upper-roman;

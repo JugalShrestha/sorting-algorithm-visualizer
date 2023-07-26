@@ -241,6 +241,11 @@ body .everything .info-about-algo {
   justify-content: flex-start;
   gap: 1vh;
 }
+body .everything .info-about-algo h1 {
+  font-size: var(--header-size);
+  text-transform: uppercase;
+  font-weight: 900;
+}
 body .everything .info-about-algo li {
   text-transform: lowercase;
   list-style-type: upper-roman;
