@@ -8,7 +8,7 @@ Making Sorting Algo Visualizer
 
 -Structure: 
     -NavOptions: Sorting algorithms
-                -Bubble, Selection, Merge, Quick, Insertion
+                -Bubble, Selection, Merge, Quick, Insertion, heap, radix, counting
                 :Array generator
                     -rand(int i<50) size<15;
                 :Sorting speed;

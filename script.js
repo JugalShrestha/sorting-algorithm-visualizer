@@ -45,15 +45,15 @@ function swap(array,i,j)
     array[i] = array[j];
     array[j] = temp;
 }
-
+var speedTempo = 600;
 var size = visualizer.children.length;
-var speed = arraySpeed.value*800 || 800;
+var speed = arraySpeed.value*speedTempo || speedTempo;
 
 arraySize.addEventListener("change",()=>{
     size = visualizer.children.length;
 })
 arraySpeed.addEventListener("change",()=>{
-    speed = arraySpeed.value * 800;
+    speed = arraySpeed.value * speedTempo;
 })
 
 //-----------------All Algorithms---------------
@@ -149,6 +149,50 @@ let algorithms = [
             arrayGenerator.style.pointerEvents = "all";
             arrayGenerator.innerText = "new array";
         }
+    }
+    ,
+    //insertion sort
+    {
+        name: "insertion",
+        info: "<h1>insertion sort</h1><li>In each pass, takes an element from the unsorted part and inserts it into its correct position in the sorted part.<li>Works by dividing the array into two parts: sorted and unsorted.<li>Time complexity: O(n^2) in the worst and average cases, but O(n) in the best case for nearly sorted data.",
+        method: async function(){
+            for (let i = 1; i < size; i++) {
+                const key = array[i];
+                visualizer.children[i].classList.add('sorting-1');
+                swapDisplay.innerHTML = "let, key = "+key;
+                let j = i - 1;
+                await sleep(speed);
+                visualizer.children[i].classList.remove('sorting-1');
+                while (j >= 0 && array[j] > key) {
+                    
+                    visualizer.children[j+1].classList.add('sorting-1');
+                    visualizer.children[j].classList.add('sorting-2');
+                    swapDisplay.innerHTML = "inserting "+array[j]+ " in "+(j+1)+" pos (key("+key+"))";
+                    array[j + 1] = array[j];
+                    visualizer.children[j+1].innerText = visualizer.children[j].innerText;
+                    visualizer.children[j].innerText = "";
+                    await sleep(speed);
+                    visualizer.children[j+1].classList.remove('sorting-1');
+                    visualizer.children[j].classList.remove('sorting-2');
+                    j--;
+                }
+                array[j + 1] = key;
+                swapDisplay.innerText = "Key: "+key + " : inserted in "+ (j+1)+" pos";
+                visualizer.children[j + 1].classList.add('sorted');
+                visualizer.children[j+1].innerText = key;
+                await sleep(speed);
+                visualizer.children[j + 1].classList.remove('sorted');
+            }
+            for(let i=0;i<size;i++)
+            {
+                visualizer.children[i].classList.add('sorted');
+            }
+            swapDisplay.innerText = "Sorted!";
+            sorter.style.pointerEvents = "all";
+            sorter.innerText = "sort";
+            arrayGenerator.style.pointerEvents = "all";
+            arrayGenerator.innerText = "new array";
+        } 
     }
 ]
 
